@@ -26,18 +26,18 @@ Then the encoding can be done with a corresponding encoding function.
 
 If I want to encode a photo 
 
-![Doge meme](secret_image.png)
+<img src="secret_image.png" alt="Doge meme" width="200"/>
 
 To a following image
 
-![Scenery image](original_image.png)
+<img src="original_image.png" alt="Scenery" width="200"/>
 
 Then following the encoding procedure with alpha=1 gives encoded version of the original cover image.
 
-![Scenery image with secret](encoded_image.png)
+<img src="encoded_image.png" alt="Scenery image with encoded secret" width="200"/>
 
 and the secret can be now calculated by following the decoding procedure. This gives:
 
-![Recovered secret](decoded_secret.png)
+<img src="decoded_secret.png" alt="Recovered secret" width="200"/>
 
 Quality of the recovered image can be traded to more visible artefacts in the encoded cover image by tuning alpha.
