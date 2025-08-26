@@ -8,6 +8,7 @@ imshow(im)
 imwrite(im, "toy_img.png")
 
 %%
+clear;clc
 % path = "toy_img.png";
 path =  "IMG20231209125836.jpg";
 % path_to_secret = "Original_Doge_meme.jpg";
@@ -19,7 +20,7 @@ toy = im2double(imread(path));
 [toy_secret, secret_image] = ECC(path_to_secret, secret_size);
 S = toy_secret(:);
 
-enc = ssis_encode(path, S, 1, 123,block_size);
+enc = ssis_encode(path, S, 5, 123,block_size);
 
 figure(1)
 subplot(1,2,1)
