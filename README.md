@@ -39,3 +39,5 @@ Then following the encoding procedure with alpha=1 gives encoded version of the 
 and the secret can be now calculated by following the decoding procedure. This gives:
 
 ![Recovered secret](decoded_secret.png)
+
+Quality of the recovered image can be traded to more visible artefacts in the encoded cover image by tuning alpha.
