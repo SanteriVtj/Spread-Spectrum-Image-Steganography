@@ -4,3 +4,9 @@
 
 # Ignore asvs
 *.asv
+
+# Exeptions
+!original_image.png
+!secret_image.png
+!encoded_image.png
+!decoded_secret.png

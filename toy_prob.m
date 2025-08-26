@@ -13,8 +13,11 @@ alpha = 1;
 toy = im2double(imread(path));
 
 %% Decoding
+
 [toy_secret, secret_image] = ECC(path_to_secret, secret_size);
 S = toy_secret(:);
+
+imwrite(rescale(secret_image), "secret_image.png")
 
 %% Nondecoding
 
