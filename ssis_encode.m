@@ -1,4 +1,4 @@
-function stego = ssis_encode(coverPath, S, alpha, key, blockSize)
+function [stego, params] = ssis_encode(coverPath, S, alpha, key, blockSize)
     C = im2double(imread(coverPath));
     Cy = rgb2ycbcr(C);
 
@@ -21,9 +21,10 @@ function stego = ssis_encode(coverPath, S, alpha, key, blockSize)
     end
 
     % Prepare secret
-    noise = rand(nS,1);
-    Senc = noise.*S+(1-S).*g(noise);
-    Sgauss = norminv(Senc);
+    % noise = rand(nS,1);
+    % Senc = noise.*S+(1-S).*g(noise);
+    % Sgauss = norminv(Senc);
+    Sgauss = 2*S-1;
 
     % Secret encoding sequences
     rng(key);
@@ -68,6 +69,11 @@ function stego = ssis_encode(coverPath, S, alpha, key, blockSize)
     stego = Cy;
     stego(:,:,1) = Y;
     stego = ycbcr2rgb(stego);
+
+    params = struct();
+    params.blockIndices = blockIndices;
+    params.pn = pn;
+    params.positionIndices = positionIndices;
 end
 
 function U = g(u)
