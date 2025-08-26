@@ -34,6 +34,28 @@ imshow(toy)
 subplot(1,2,2)
 imshow(enc)
 
+figure(2)
+[R,G,B] = imsplit(toy);
+[yRed, x] = imhist(R);
+[yGreen, x] = imhist(G);
+[yBlue, x] = imhist(B);
+subplot(1, 2, 1); 
+bar(x, yRed, 'Red', "FaceAlpha", 0.5) ,hold on , bar(x,yGreen, 'Green', "FaceAlpha", 0.5), hold on ,bar(x, yBlue, 'Blue', "FaceAlpha", 0.5);
+
+[R,G,B] = imsplit(enc);
+[yRed, x] = imhist(R);
+[yGreen, x] = imhist(G);
+[yBlue, x] = imhist(B);
+subplot(1, 2, 2); 
+bar(x, yRed, 'Red', "FaceAlpha", 0.5) ,hold on , bar(x, yGreen, 'Green', "FaceAlpha", 0.5), hold on ,bar(x, yBlue, 'Blue', "FaceAlpha", 0.5);
+
+% subplot(1,2,2)
+% imhist(enc(:,:,1))
+% hold on
+% imhist(enc(:,:,2))
+% hold on
+% imhist(enc(:,:,3))
+
 imwrite(enc, "toy_secret.png")
 
 [decoded, paramsd] = ssis_decode("toy_secret.png", length(S), 123, alpha, block_size);
@@ -55,7 +77,7 @@ S_hat = im2double(reshape(S_hat, secret_size, secret_size));
 
 %%
 
-figure(2)
+figure(3)
 subplot(1,2,1)
 imshow(rescale(secret_image))
 subplot(1,2,2)
