@@ -36,7 +36,7 @@ Then following the encoding procedure with alpha=1 gives encoded version of the 
 
 <img src="encoded_image.png" alt="Scenery image with encoded secret" width="600"/>
 
-and the secret can be now calculated by following the decoding procedure. This gives:
+and the secret can now be calculated by following the decoding procedure. This gives:
 
 <img src="decoded_secret.png" alt="Recovered secret" width="300"/>
 
