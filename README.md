@@ -1,4 +1,4 @@
-# Spread Specturm Image Steganography (SSIS)
+# Spread Spectrum Image Steganography (SSIS)
 
 This repository contains simple version of the SSIS algorithm. The algorithm does not normalize the added noise.
 
